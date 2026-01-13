@@ -1,0 +1,34 @@
+;
+; $VER: PopupMenuUserInstaller V1.1 (24.6.97)
+; Copyright ©1996-1997 Henrik Isaksson
+;
+
+(copylib
+	(prompt		"Installing the popupmenu.library...")
+	(help		@copylib-help)
+	(source		"libs/popupmenu.library")
+	(dest		"LIBS:")
+	(optional	force askuser)
+	(confirm)
+)
+
+(set #prefdest (askdir
+	(prompt "Where do you want me to install the Prefs editor?")
+	(help " ")
+	(newpath)
+	(default "SYS:Prefs/")
+))
+
+
+(copyfiles
+	(prompt		"Installing the prefs editor... (pre-release)")
+	(help		@copyfiles-help)
+	(source		"prefs")
+	(dest		#prefdest)
+	(optional	force askuser)
+	(pattern 	"#?")
+)
+
+(set @default-dest "SYS:")
+
+(exit)
