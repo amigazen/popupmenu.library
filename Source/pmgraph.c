@@ -1,10 +1,11 @@
-//
-// PopupMenu
-// ©1996-2000 Henrik Isaksson
-//
-// Graphic rendering routines
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmgraph.c - Graphic rendering routines
+ */
 #include "pmpriv.h"
 
 //

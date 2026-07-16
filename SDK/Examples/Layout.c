@@ -1,12 +1,10 @@
 /*
+ * SPDX-License-Identifier: BSD-2-Clause
  *
- * $VER: Layout.c 1.1 (23.08.00)
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
  *
- * Popup Menu example program
- *
- * ©1996-1998 Henrik Isaksson
- * All Rights Reserved.
- *
+ * $VER: Layout.c 1.1 - Popup Menu example program
  */
 
 #include <intuition/intuition.h>
@@ -15,7 +13,7 @@
 #include <proto/intuition.h>
 #include <proto/exec.h>
 
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 
 #include <string.h>
 #include <stdio.h>

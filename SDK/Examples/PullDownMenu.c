@@ -1,16 +1,11 @@
-//
-// $VER: PullDownMenu.c 2.2 (20.07.00)
-//
-// Popup Menu example program
-//
-// ©1996-1997 Henrik Isaksson
-//
-// This code is public domain.
-//
-// Changes:
-//
-// 2.2	Added support for PM_Toggle
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * $VER: PullDownMenu.c 2.2 (20.07.00) - Popup Menu example program
+ */
 
 #include <intuition/intuition.h>
 #include <exec/memory.h>
@@ -18,7 +13,7 @@
 #include <proto/intuition.h>
 #include <proto/exec.h>
 
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 
 #include <string.h>
 #include <stdio.h>

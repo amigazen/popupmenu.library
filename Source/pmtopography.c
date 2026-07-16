@@ -1,18 +1,18 @@
-//
-// pmtopography.h
-//
-// PopupMenu Library - Topographical Menu Map
-//
-// Copyright (C)2000 Henrik Isaksson <henrik@boing.nu>
-// All Rights Reserved.
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmtopography.c - Topographical Menu Map
+ */
 
 #include "pmtopography.h"
 
 #include <exec/lists.h>
 #include <exec/memory.h>
 #include <proto/exec.h>
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 
 //
 // PM_AddTopographicRegion - add a rectangular region of height h to the topographic map.

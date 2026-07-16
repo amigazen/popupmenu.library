@@ -1,18 +1,12 @@
-/* -- ----------------------------------------------------------------- -- *
- * -- Program.....: Layout.e                                            -- *
- * -- Author......: Daniel Kasmeroglu <raptor@cs.tu-berlin.de>          -- *
- * -- Description.: Port of an example by Henrik Isaksson               -- *
- * -- ----------------------------------------------------------------- -- *
- * -- Original header:                                                  -- *
- * --                                                                   -- *
- * -- $VER: Layout.c 1.0 (16.07.99)                                     -- *
- * --                                                                   -- *
- * -- Popup Menu example program                                        -- *
- * --                                                                   -- *
- * -- ©1996-1998 Henrik Isaksson                                        -- *
- * -- All Rights Reserved.                                              -- *
- * --                                                                   -- *
- * -- ----------------------------------------------------------------- -- */
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 1998-1999 Daniel Kasmeroglu
+ * Copyright (C) 2026 amigazen project
+ *
+ * Layout.e - E language port of the PopupMenu Layout example
+ */
 
 /* -- ----------------------------------------------------------------- -- *
  * --                              Options                              -- *

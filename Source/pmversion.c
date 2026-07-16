@@ -1,11 +1,13 @@
-//
-// pmversion.c
-//
-// PopupMenu Library - Version information
-//
-// Copyright (C)1996-2001 Henrik Isaksson <henrik@boing.nu>
-// All Rights Reserved.
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmversion.c - VER string for PM_GetVersion / version queries
+ */
+
+#include "Rev.h"
 
 #ifdef _M68020
 #ifdef _M68030
@@ -25,4 +27,4 @@
 #define __CPU__ "000"
 #endif
 
-char _LibID[] = "$VER: popupmenu.library-" __CPU__ " 10.10.180 (24.04.03) ©1996-2001 Henrik Isaksson";
+char _LibID[] = "$VER: popupmenu.library " VERSION " (" DATE ")";

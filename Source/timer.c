@@ -1,3 +1,12 @@
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * timer.c - Easy timer request helpers
+ */
+
 #include <exec/types.h>
 #include <devices/timer.h>
 #include <proto/exec.h>

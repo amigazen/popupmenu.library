@@ -1,24 +1,12 @@
-/* -- ----------------------------------------------------------------- -- *
- * -- Program.....: BigMenu.e                                           -- *
- * -- Author......: Daniel Kasmeroglu <raptor@cs.tu-berlin.de>          -- *
- * -- Description.: Port of an example bby Henrik Isaksson.             -- *
- * -- ----------------------------------------------------------------- -- *
- * -- Original header:                                                  -- *
- * --                                                                   -- *
- * --   $VER: BigMenu.c 1.6 (05.09.98)                                  -- *
- * --                                                                   -- *
- * --   Popup Menu library test program                                 -- *
- * --                                                                   -- *
- * --   ©1996-1997 Henrik Isaksson                                      -- *
- * --   All Rights Reserved.                                            -- *
- * --                                                                   -- *
- * --   Run and click the mouse in the window!                          -- *
- * --   This little hack is intended to test the submenus.              -- *
- * --                                                                   -- *
- * --   WARNING! When the menu runs out of stack, it will end           -- *
- * --   in a crash!                                                     -- *
- * --                                                                   -- *
- * -- ----------------------------------------------------------------- -- */
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 1998-1999 Daniel Kasmeroglu
+ * Copyright (C) 2026 amigazen project
+ *
+ * BigMenu.e - E language port of the PopupMenu BigMenu example
+ */
 
 /* -- ----------------------------------------------------------------- -- *
  * --                              Options                              -- *

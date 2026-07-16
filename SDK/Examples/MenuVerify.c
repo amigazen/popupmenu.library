@@ -1,18 +1,16 @@
-//
-// $VER: MenuVerify.c 1.2 (07.01.00)
-//
-// Popup Menu example program
-//
-// ©1996-1997 Henrik Isaksson
-// All Rights Reserved.
-//
-// Run and click the mouse in the window!
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * $VER: MenuVerify.c 1.2 (07.01.00) - Popup Menu example program
+ */
 
-//
-// Note! Read the RKRMs for information about how to use MenuVerify
-// correctly. I have done it the easy way.
-//
+/*
+ * Note! Read the RKRMs for information about how to use MenuVerify
+ * correctly. I have done it the easy way.
+ */
 
 #include <intuition/intuition.h>
 
@@ -20,7 +18,7 @@
 #include <proto/gadtools.h>
 #include <proto/exec.h>
 
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 
 #include <string.h>
 #include <stdio.h>

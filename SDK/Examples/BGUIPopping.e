@@ -1,8 +1,12 @@
-/* -- ----------------------------------------------------------------- -- *
- * -- Program.....: BGUIPopping.e                                       -- *
- * -- Author......: Daniel Kasmeroglu <raptor@cs.tu-berlin.de>          -- *
- * -- Description.: "popupmenu.library" together with "bgui.library".   -- *
- * -- ----------------------------------------------------------------- -- */
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 1998-1999 Daniel Kasmeroglu
+ * Copyright (C) 2026 amigazen project
+ *
+ * BGUIPopping.e - popupmenu.library together with bgui.library
+ */
 
 /* -- ----------------------------------------------------------------- -- *
  * --                              Options                              -- *

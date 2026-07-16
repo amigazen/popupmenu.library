@@ -1,19 +1,17 @@
-//
-// $VER: MenuIcons.c 1.1 (09.09.00)
-//
-// Popup Menu example program
-//
-// ©1996-1997 Henrik Isaksson
-// All Rights Reserved.
-//
-// This simple example shows how to use standard BOOPSI images as menu icons.
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * $VER: MenuIcons.c 1.1 (09.09.00) - BOOPSI images as menu icons
+ */
 
 #include <intuition/intuition.h>
 #include <intuition/imageclass.h>
 #include <proto/intuition.h>
 #include <proto/exec.h>
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 #include <stdio.h>
 #include <string.h>
 

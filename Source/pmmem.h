@@ -1,8 +1,12 @@
-//
-// pmmem.h
-//
-// Operating System Independent Memory Management
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmmem.h - Operating System Independent Memory Management
+ */
+
 
 #ifndef PM_MEM_H
 #define PM_MEM_H

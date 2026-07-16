@@ -1,25 +1,11 @@
 /*
-//	$VER: pm.h 10.05 (11.11.00)
-//
-//	Library base, tags and macro definitions
-//	for popupmenu.library.
-//
-//	©1996-2000 Henrik Isaksson
-//	All Rights Reserved.
-//
-//	Changes:
-//
-//	9.00	New PopupMenu structure.
-//		Several new tags and updated macros.
-//	9.01	Added PM_HintBox
-//	10.0	Added PM_Toggle, PM_ExcludeShared
-//		Added macro PMMXItem
-//		Added two flags, PM_CHECKIT and PM_CHECKED
-//	10.05	Changed the PopupMenu structure a bit.
-//		Added typedef for PopupMenu.
-//		Added american english equalients for some tags.
-//
-*/
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * popupmenu.h / pm.h - Library base, tags and macros for popupmenu.library
+ */
 
 #ifndef LIBRARIES_POPUPMENU_H
 #define LIBRARIES_POPUPMENU_H

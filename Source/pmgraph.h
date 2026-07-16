@@ -1,11 +1,11 @@
-//
-// pmgraph.h
-//
-// PopupMenu Library - Graphics routines
-//
-// Copyright (C)2000 Henrik Isaksson <henrik@boing.nu>
-// All Rights Reserved.
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmgraph.h - Graphics routines
+ */
 
 #ifndef PM_GRAPH_H
 #define PM_GRAPH_H

@@ -1,19 +1,13 @@
 /*
-//	$VER: pminternals.h 10.00 (9.11.00)
-//
-//	Internal structures used by popupmenu.library
-//
-//	©1996-2000 Henrik Isaksson
-//	All Rights Reserved.
-//
-//	Changes:
-//
-//	10.00	Initial version
-//
-//  *WARNING*
-//
-//  Everything in this file is subject to change.
-*/
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pminternals.h - Internal structures used by popupmenu.library
+ *
+ * WARNING: Everything in this file is subject to change.
+ */
 
 #ifndef LIBRARIES_PMINTERNALS_H
 #define LIBRARIES_PMINTERNALS_H

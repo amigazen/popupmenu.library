@@ -1,3 +1,12 @@
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pminput.h - Input message types for popupmenu.library
+ */
+
 #ifndef PM_INPUT_H
 #define PM_INPUT_H
 

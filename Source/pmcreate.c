@@ -1,10 +1,11 @@
-//
-// PopupMenu
-// ©1996-2002 Henrik Isaksson
-//
-// Menu creation/disposal & id list functions
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmcreate.c - Menu creation/disposal and ID lists
+ */
 #include "pmpriv.h"
 
 void FreeIDList(struct PM_IDLst *f)

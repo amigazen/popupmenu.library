@@ -1,10 +1,11 @@
-//
-// pmfind.c - Various support functions used to search the menu item tree.
-//
-// Copyright ©1996 - 2002 Henrik Isaksson
-// All Rights Reserved.
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmfind.c - Menu item tree search helpers
+ */
 #include "pmpriv.h"
 
 //

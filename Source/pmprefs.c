@@ -1,3 +1,12 @@
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmprefs.c - PopupMenu preferences defaults and loaders
+ */
+
 #include <dos/dos.h>
 #include <proto/dos.h>
 #include <exec/exec.h>
@@ -5,10 +14,7 @@
 #include <string.h>
 #include "pmprefs.h"
 
-#ifdef __AROS__
-#include "pmpriv.h"
 void PM_LoadPrefsFile(STRPTR filename, ULONG flags, struct PopupMenuPrefs *prefs, struct PopupMenuPrefs *defprefs);
-#endif
 
 struct PopupMenuPrefs DefaultPrefs = {
 	1,			/* pmp_Flags		*/

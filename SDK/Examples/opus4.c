@@ -1,14 +1,11 @@
-//
-// $VER: Opus4.c 1.0 (21.08.00)
-//
-// Popup Menu example program
-//
-// ©1996-2000 Henrik Isaksson
-// All Rights Reserved.
-//
-// This example shows how to use MultiSelect, Mutual Exclude items, MenuHandlers
-// and how to share Item ID lists among a set of items. (saves memory and typing)
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * $VER: Opus4.c 1.0 (21.08.00) - MultiSelect / Mutual Exclude example
+ */
 
 #include <intuition/intuition.h>
 
@@ -16,7 +13,7 @@
 #include <proto/graphics.h>
 #include <proto/exec.h>
 
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 
 #include <string.h>
 #include <stdio.h>

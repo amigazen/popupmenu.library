@@ -1,10 +1,11 @@
-//
-// PopupMenu
-// ©1996-1997 Henrik Isaksson
-//
-// Get/Set Attrs functions
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmtags.c - Get/Set Attrs functions
+ */
 #include "pmpriv.h"
 
 #ifdef __AROS__

@@ -1,4 +1,11 @@
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * iff.c - Standard module for reading/writing simple IFF files
+ */
 
 /* Standard module for reading/writing simple IFF files */
 

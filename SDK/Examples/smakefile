@@ -1,0 +1,98 @@
+#
+# :ts=8
+#
+# SDK/Examples smakefile — popupmenu.library C sample clients (SAS/C)
+#
+# From this drawer:  smake
+# From Source/:      smake examples
+#
+# Needs popupmenu.library in LIBS: and headers under SDK/Include_h/
+# (proto/pm.h wrappers + libraries/pm.h).
+#
+
+###############################################################################
+
+OPTIMIZE = optimize opttime
+#DEBUG = debug=symbolflush
+
+###############################################################################
+
+# /Include_h = ../Include_h when building from SDK/Examples/
+CFLAGS = resopt idlen=64 comnest streq strmerge nostkchk nocheckabort \
+	includedir=/Include_h includedir=/SDK/Include_h includedir=include: \
+	includedir=SDK:Include_h \
+	$(OPTIMIZE) $(DEBUG) \
+	params=register strsect=code \
+	unsignedchars noversion noicons memorysize=huge
+LFLAGS = noicons batch
+LIBS = lib:amiga.lib sc:lib/sc.lib
+
+###############################################################################
+
+# All .c demos in this drawer (E sources are not built here)
+EXAMPLES = \
+	SimpleMenu \
+	Demo \
+	Dynamic \
+	Disable \
+	StartMenu \
+	PullDownMenu \
+	MenuVerify \
+	BigMenu \
+	Layout \
+	LocaleMenu \
+	EndlessMenu \
+	MenuIcons \
+	opus4
+
+###############################################################################
+
+all: $(EXAMPLES)
+
+SimpleMenu: SimpleMenu.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ SimpleMenu.c LIB $(LIBS)
+
+Demo: Demo.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ Demo.c LIB $(LIBS)
+
+Dynamic: Dynamic.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ Dynamic.c LIB $(LIBS)
+
+Disable: Disable.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ Disable.c LIB $(LIBS)
+
+StartMenu: StartMenu.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ StartMenu.c LIB $(LIBS)
+
+PullDownMenu: PullDownMenu.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ PullDownMenu.c LIB $(LIBS)
+
+MenuVerify: MenuVerify.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ MenuVerify.c LIB $(LIBS)
+
+BigMenu: BigMenu.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ BigMenu.c LIB $(LIBS)
+
+Layout: Layout.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ Layout.c LIB $(LIBS)
+
+LocaleMenu: LocaleMenu.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ LocaleMenu.c LIB $(LIBS)
+
+EndlessMenu: EndlessMenu.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ EndlessMenu.c LIB $(LIBS)
+
+MenuIcons: MenuIcons.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ MenuIcons.c LIB $(LIBS)
+
+opus4: opus4.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ opus4.c LIB $(LIBS)
+
+###############################################################################
+
+clean:
+	delete $(EXAMPLES) *.o all
+
+###############################################################################
+
+.PHONY: all clean

@@ -1,10 +1,11 @@
-//
-// PopupMenu
-// ©1996-2000 Henrik Isaksson
-//
-// Menu Item Layout
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmlayout.c - Menu Item Layout
+ */
 #include "pmpriv.h"
 
 UWORD PM_ItemHeight(struct PM_Window *a, struct PopupMenu *pm)
@@ -82,7 +83,7 @@ UWORD PM_ItemWidth(struct PM_Window *a, struct PopupMenu *pm)
     } else {
         struct Image *img=pm->Images[0];
 
-        // Hitta den största
+        // Hitta den stÃ¶rsta
 
         if(!img) { img=pm->Images[1]; }
         else if(pm->Images[1]) {

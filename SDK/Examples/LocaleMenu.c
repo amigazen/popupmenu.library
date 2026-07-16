@@ -1,19 +1,16 @@
 /*
-// $VER: LocaleMenu.c 1.0 (23.08.99)
-//
-// Popup Menu example program
-//
-// ©1996-1997 Henrik Isaksson
-// All Rights Reserved.
-//
-// This example shows how to use the LocaleHook feature of
-// popupmenu.library.
-*/
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * $VER: LocaleMenu.c 1.0 (23.08.99) - LocaleHook example
+ */
 
 #include <intuition/intuition.h>
 #include <proto/intuition.h>
 #include <proto/exec.h>
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 #include <stdio.h>
 #include <utility/hooks.h>
 

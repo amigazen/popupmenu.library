@@ -1,12 +1,15 @@
-//
-// pmdrawshadow.c - Renders shadows, uses CyberGfx if available.
-//
-// Copyright (C) 1996 - 2002 Henrik Isaksson
-// All Rights Reserved.
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmdrawshadow.c - Renders shadows, uses CyberGfx if available.
+ */
 
 #include <cybergraphx/cybergraphics.h>
 #include <proto/cybergraphics.h>
+#include <clib/compiler-specific.h>
 #include "pmpriv.h"
 
 // Macros that extract colour information
@@ -45,9 +48,17 @@ struct ShRect {
     BYTE r, g, b;
 };
 
-// shadefunc - CGFX hook that processes a ShRect structure passed in
-// hook->h_Data.
-ULONG shadefunc(struct Hook *hook, struct RastPort *rp, struct CGFXHookMsg *m)
+/*
+ * CGFX shade hook — register calling convention matches autodoc HookEntry
+ * inputs (A0=hook, A2=object, A1=msg). Used as h_Entry directly so we do
+ * not need amiga.lib HookEntry (which is stack/_HookEntry only; with
+ * params=register the linker looks for @HookEntry and fails).
+ */
+__ASM__ __SAVE_DS__ ULONG
+shadefunc(
+	__REG__(a0, struct Hook *hook),
+	__REG__(a2, struct RastPort *rp),
+	__REG__(a1, struct CGFXHookMsg *m))
 {
     UBYTE		*ptr=(UBYTE *)m->memptr;
     UWORD		*wrow;
@@ -373,8 +384,8 @@ void PM_DrawShadow(struct PM_Window *w, int x, int y, int xb, int yb)
             rect.b = PM_Prefs->pmp_ShadowB;
 
             shadehook.h_Data = &rect;
-	    shadehook.h_Entry = HookEntry;
-            shadehook.h_SubEntry = (HOOKFUNC)shadefunc;
+	    shadehook.h_Entry = (HOOKFUNC)shadefunc;
+            shadehook.h_SubEntry = NULL;
                 
             DoCDrawMethodTagList(&shadehook, w->RPort, NULL);
 

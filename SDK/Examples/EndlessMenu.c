@@ -1,18 +1,11 @@
-//
-// $VER: EndlessMenu.c 1.1 (25.08.00)
-//
-// Popup Menu library test program
-//
-// ©1996-2000 Henrik Isaksson
-// All Rights Reserved.
-//
-// Run and click the mouse in the window!
-// This little hack is intended to test the submenus.
-//
-// Changes:
-//
-// 1.1	Displays remaining stack and free RAM now
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * $VER: EndlessMenu.c 1.1 (25.08.00) - Popup Menu library test program
+ */
 
 #include <intuition/intuition.h>
 #include <exec/memory.h>
@@ -20,7 +13,7 @@
 #include <proto/intuition.h>
 #include <proto/exec.h>
 
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 
 #include <string.h>
 #include <stdio.h>

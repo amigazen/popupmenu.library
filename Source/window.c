@@ -1,8 +1,11 @@
-//
-// Popup Menu Window funcs
-// ©1996-2002 Henrik Isaksson
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * window.c - Popup Menu Window funcs
+ */
 #include "pmpriv.h"
 
 //
@@ -32,7 +35,7 @@ void PM_TransparencyBfr(struct PM_Window *bw)
 	int j, bpp;
 	ULONG	transparent = FALSE;
 
-#ifndef __AROS__
+#if !defined(__AROS__) && !defined(__SASC)
 	GetGUIAttrs(NULL, bw->p->DrawInfo, GUIA_MenuTransparency, &transparent, TAG_DONE);
 #endif
 
@@ -93,7 +96,7 @@ BOOL PM_OpenWindow(struct PM_Window *pw, int left, int top, int width, int heigh
                 WA_Height,              height,
                 //WA_ReportMouse,         TRUE,
                 WA_CustomScreen,        scr,
-                //WA_IDCMP,               IDCMP_CLOSEWINDOW,	// Kommer aldrig att inträffa - anv. för resize
+                //WA_IDCMP,               IDCMP_CLOSEWINDOW,	// Kommer aldrig att intrÃ¤ffa - anv. fÃ¶r resize
                 WA_SmartRefresh,        TRUE,
                 WA_BackFill,            LAYERS_NOBACKFILL,
                 TAG_DONE);

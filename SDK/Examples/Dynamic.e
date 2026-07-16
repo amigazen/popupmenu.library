@@ -1,18 +1,12 @@
-/* -- ----------------------------------------------------------------- -- *
- * -- Program.....: Dynamic.e                                           -- *
- * -- Author......: Daniel Kasmeroglu <raptor@cs.tu-berlin.de>          -- *
- * -- Description.: Port of an example by Henrik Isaksson               -- *
- * -- ----------------------------------------------------------------- -- *
- * -- Original header:                                                  -- *
- * --                                                                   -- *
- * --   $VER: Dynamic.c 1.1 (05.09.98)                                  -- *
- * --                                                                   -- *
- * --   Popup Menu example program                                      -- *
- * --                                                                   -- *
- * --   ©1996-1998 Henrik Isaksson                                      -- *
- * --   All Rights Reserved.                                            -- *
- * --                                                                   -- *
- * -- ----------------------------------------------------------------- -- */
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 1998-1999 Daniel Kasmeroglu
+ * Copyright (C) 2026 amigazen project
+ *
+ * Dynamic.e - E language port of the PopupMenu Dynamic example
+ */
 
 /* -- ----------------------------------------------------------------- -- *
  * --                              Options                              -- *

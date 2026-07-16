@@ -1,20 +1,12 @@
-/* -- ----------------------------------------------------------------- -- *
- * -- Program.....: Disable.e                                           -- *
- * -- Author......: Daniel Kasmeroglu <raptor@cs.tu-berlin.de>          -- *
- * -- Description.: Port of an example by Henrik Isaksson.              -- *
- * -- ----------------------------------------------------------------- -- *
- * -- Original header:                                                  -- *
- * --                                                                   -- *
- * --   $VER: Disable.c 2.0 (05.09.98)                                  -- *
- * --                                                                   -- *
- * --   Popup Menu example program                                      -- *
- * --                                                                   -- *
- * --   ©1996-1997 Henrik Isaksson                                      -- *
- * --   All Rights Reserved.                                            -- *
- * --                                                                   -- *
- * --   Run and click the mouse in the window!                          -- *
- * --                                                                   -- *
- * -- ----------------------------------------------------------------- -- */
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 1998-1999 Daniel Kasmeroglu
+ * Copyright (C) 2026 amigazen project
+ *
+ * Disable.e - E language port of the PopupMenu Disable example
+ */
 
 /* -- ----------------------------------------------------------------- -- *
  * --                              Options                              -- *

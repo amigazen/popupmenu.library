@@ -1,8 +1,11 @@
-//
-// Popup Menu Images
-// ©1996-1997 Henrik Isaksson
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmimages.c - Popup Menu Images
+ */
 #include <exec/types.h>
 #include <intuition/intuition.h>
 #include <cybergraphx/cybergraphics.h>
@@ -102,7 +105,9 @@ struct PrefsImage *PM_Image_Get(ULONG type, struct PopupMenu *item)
 UWORD PM_Image_Draw(struct PM_Window *w, ULONG type, WORD l, struct DrawInfo *dri, ULONG state, struct PopupMenu *item)
 {
 #if 1
+#ifndef __SASC
 #warning "trying to get rid of global p"
+#endif
     	struct PM_Root *p = w->p;
 #endif
 

@@ -1,6 +1,12 @@
-//
-// Menu Prefs
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * prefs.h - Menu Prefs (legacy)
+ */
+
 
 #ifndef PM_PREFS_H
 #define PM_PREFS_H

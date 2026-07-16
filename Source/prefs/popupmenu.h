@@ -1,14 +1,16 @@
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 2002 Amiga, Inc.
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * prefs/popupmenu.h - File format for popupmenu preferences
+ * $VER: popupmenu.h 50.1 (15.5.2002)
+ */
+
 #ifndef PREFS_POPUPMENU_H
 #define PREFS_POPUPMENU_H
-/*
-**	$VER: popupmenu.h 50.1 (15.5.2002)
-**	Includes Release 50.1
-**
-**	File format for example preferences
-**
-**	(C) Copyright 2002 Amiga, Inc.
-**	All Rights Reserved
-*/
 
 /*****************************************************************************/
 

@@ -1,11 +1,11 @@
-//
-// pmshadow.h
-//
-// PopupMenu Library - Shadows
-//
-// Copyright (C)2000 Henrik Isaksson <henrik@boing.nu>
-// All Rights Reserved.
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmshadow.h - Shadows
+ */
 
 #ifndef PM_SHADOW_H
 #define PM_SHADOW_H

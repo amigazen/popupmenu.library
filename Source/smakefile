@@ -1,0 +1,144 @@
+#
+# :ts=8
+#
+# SAS/C smakefile for popupmenu.library — ToolKit / AsyncIO-style NOSTARTUP link.
+# Canonical LVO list: /SDK/SFD/popupmenu_lib.sfd
+#
+###############################################################################
+
+NAME = popupmenu.library
+
+###############################################################################
+
+OPTIMIZE = optimize opttime
+#DEBUG = line
+DEBUG = symbolflush noopt
+
+###############################################################################
+
+CFLAGS = resopt idlen=64 comnest streq strmerge nostkchk nocheckabort \
+	includedir=include includedir=/SDK/Include_h includedir=include: \
+	includedir=SDK:Include_h \
+	$(OPTIMIZE) debug=$(DEBUG) \
+	params=register strsect=code mccons smallcode smalldata \
+	unsignedchars nomultipleincludes structureequivalence \
+	optimizescheduler noversion noicons memorysize=huge \
+	stringsconst nostartup define=__UTILITY_STDLIBBASE__
+LFLAGS = addsym smallcode smalldata noicons batch stripdebug
+
+###############################################################################
+
+OBJS = \
+	StartUp.o \
+	LibInit.o \
+	pmversion.o \
+	pm.o \
+	pmgraph.o \
+	pminit.o \
+	pminput.o \
+	window.o \
+	pmimages.o \
+	pmfind.o \
+	pmshadow.o \
+	pmtopography.o \
+	pmdlist.o \
+	pmlayout.o \
+	pmdrawshadow.o \
+	pmtags.o \
+	pmcreate.o \
+	pmmem.o \
+	pmprefs.o \
+	iff.o \
+	pmrexx.o
+
+###############################################################################
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	Sc $(LFLAGS) NOSTARTUP LINK TO $@ $(OBJS) LIB lib:amiga.lib
+
+examples:
+	@echo "building SDK/Examples"
+	@cd /SDK/Examples
+	smake all
+	@cd /Source
+
+install: $(NAME)
+	copy $(NAME) LIBS:
+	avail flush >nil:
+
+clean:
+	delete $(NAME) $(NAME).debug $(NAME).map $(OBJS) all
+	@cd /SDK/Examples
+	smake clean
+	@cd /Source
+
+###############################################################################
+
+StartUp.o: StartUp.c private/pm_build.h popupmenu_funcs.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ StartUp.c
+
+LibInit.o: LibInit.c private/pm_build.h Rev.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ LibInit.c
+
+pmversion.o: pmversion.c Rev.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmversion.c
+
+pm.o: pm.c popupmenu.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pm.c
+
+pmgraph.o: pmgraph.c popupmenu.h pmgraph.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmgraph.c
+
+pminit.o: pminit.c popupmenu.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pminit.c
+
+pminput.o: pminput.c popupmenu.h pminput.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pminput.c
+
+window.o: window.c popupmenu.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ window.c
+
+pmimages.o: pmimages.c popupmenu.h pmimages.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmimages.c
+
+pmfind.o: pmfind.c popupmenu.h pmfind.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmfind.c
+
+pmshadow.o: pmshadow.c popupmenu.h pmshadow.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmshadow.c
+
+pmtopography.o: pmtopography.c popupmenu.h pmtopography.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmtopography.c
+
+pmdlist.o: pmdlist.c popupmenu.h pmdlist.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmdlist.c
+
+pmlayout.o: pmlayout.c popupmenu.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmlayout.c
+
+pmdrawshadow.o: pmdrawshadow.c popupmenu.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmdrawshadow.c
+
+pmtags.o: pmtags.c popupmenu.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmtags.c
+
+pmcreate.o: pmcreate.c popupmenu.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmcreate.c
+
+pmmem.o: pmmem.c popupmenu.h pmmem.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmmem.c
+
+pmprefs.o: pmprefs.c popupmenu.h pmprefs.h prefs.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmprefs.c
+
+iff.o: iff.c popupmenu.h pminternals.h pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ iff.c
+
+pmrexx.o: pmrexx.c pmpriv.h
+	Sc $(CFLAGS) UTILLIB OBJNAME $@ pmrexx.c
+
+###############################################################################
+
+.PHONY: all install clean examples

@@ -1,10 +1,11 @@
-//
-// PopupMenu
-// ©1996-2000 Henrik Isaksson
-//
-// Library init & cleanup
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pminit.c - Library init and cleanup
+ */
 #define INIT 1
 
 #include "pmpriv.h"

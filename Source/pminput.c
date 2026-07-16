@@ -1,10 +1,11 @@
-//
-// PopupMenu
-// ©1996-2002 Henrik Isaksson
-//
-// User Input & timer
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pminput.c - User Input and timer
+ */
 #include "pmpriv.h"
 #include "pminput.h"
 

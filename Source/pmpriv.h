@@ -1,15 +1,21 @@
-//
-// Popup Menu
-// ©1996-2002 Henrik Isaksson
-// Private definitons
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmpriv.h - Private definitions
+ */
 #ifndef PMPRIV_H
 #define PMPRIV_H
 
 #include "compiler.h"
 
-#ifndef __AROS__
+/*
+ * screens.h / gui.h / newgui.h are NewGUI (non-NDK) headers used by the
+ * non-AROS tree. SAS/C ToolKit builds are classic NDK 3.2 -- skip them.
+ */
+#if !defined(__AROS__) && !defined(__SASC)
 #include "screens.h"
 #include "gui.h"
 #endif
@@ -38,7 +44,7 @@
 
 #include <dos/dos.h>
 
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 
 #include <string.h>
 
@@ -58,7 +64,7 @@
 #include "pmgraph.h"
 #include "pmimages.h"
 
-#ifndef __AROS__
+#if !defined(__AROS__) && !defined(__SASC)
 
 /*--- functions in V50 or higher (Release 4) ---*/
 #pragma libcall IntuitionBase ShowWindow 342 9802
@@ -137,6 +143,8 @@
 
 #ifdef __AROS__
 #warning "FIXME: Pens"
+#endif
+#if defined(__AROS__) || defined(__SASC)
 #define MENUSHINEPEN 	    SHINEPEN
 #define MENUSHADOWPEN 	    SHADOWPEN
 #define MENUTEXTPEN 	    TEXTPEN
@@ -205,8 +213,8 @@
 #define IMG_MMSUB       (0x7002L)   // MagicMenu Submenu arrow
 #define IMG_MMEXCLUDE       (0x7003L)   // MagicMenu MX Image
 
-#define IMG_BULLET_A        (0x8000L)   // bullet       ·
-#define IMG_BULLET_B        (0x8100L)   // 3d bullet        ·
+#define IMG_BULLET_A        (0x8000L)   // bullet       Â·
+#define IMG_BULLET_B        (0x8100L)   // 3d bullet        Â·
 #define IMG_ARROW_A     (0x8200L)   // Arrow        >
 #define IMG_ARROW_B     (0x8300L)   // 3d arrow     >
 #define IMG_ARROW_C     (0x8400L)   // Arrow        ->

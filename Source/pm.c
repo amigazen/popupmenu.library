@@ -1,16 +1,16 @@
-//
-// pm.c - popupmenu.library
-//
-// popupmenu.library and the PopupMenu package is
-// Copyright ©1996 - 2002 Henrik Isaksson
-// All Rights Reserved.
-//
-
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pm.c - popupmenu.library
+ */
 #include "pmpriv.h"
 
 #include "pminput.h"
 
-#ifndef __AROS__
+#if !defined(__AROS__) && !defined(__SASC)
 #include "newgui.h"
 #endif
 
@@ -374,7 +374,7 @@ BOOL PM_OpenPopupWindow(struct PM_Window *a)
 {
 	ULONG	shadows = TRUE;
 
-#ifndef __AROS__
+#if !defined(__AROS__) && !defined(__SASC)
 	if( IntuitionBase->LibNode.lib_Version >= 50 ) {
 		GetGUIAttrs(NULL, a->p->DrawInfo, GUIA_MenuDropShadows, &shadows, TAG_DONE); // V50 !!
 	}
@@ -708,7 +708,9 @@ APTR PM_DoPopup(struct PM_Window *a)
 	    #if 0
                 } else if((a->NextWindow = PM_SetupSubWindow(a, p, a->SubMenuToOpen))) {
 	    #else
+#ifndef __SASC
 	    	#warning "CHECKME: trying to avoid global p"
+#endif
                 } else if((a->NextWindow = PM_SetupSubWindow(a, a->p, a->SubMenuToOpen))) {
 	    #endif
                     PM_DoPopup(a->NextWindow);
@@ -924,7 +926,9 @@ APTR __saveds ASM PM_OpenPopupMenuA(register __a1 struct Window *prevwnd GNUCREG
         struct TagItem          *tstate;
         struct TagItem          *tag;
 #if 1
+#ifndef __SASC
 #warning "trying to get rid of global p"
+#endif
     	struct PM_Root	    	*p;
 #endif
 	

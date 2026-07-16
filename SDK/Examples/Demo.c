@@ -1,21 +1,18 @@
-//
-// $VER: Demo.c 2.2 (05.09.98)
-//
-// Popup Menu example program
-//
-// ©1996-1997 Henrik Isaksson
-// All Rights Reserved.
-//
-// Run and click the mouse in the window and over the dragbar!
-// (two different menus)
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * $VER: Demo.c 2.2 (05.09.98) - Popup Menu example program
+ */
 
 #include <intuition/intuition.h>
 
 #include <proto/intuition.h>
 #include <proto/exec.h>
 
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 
 #include <string.h>
 #include <stdio.h>

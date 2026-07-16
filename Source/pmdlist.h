@@ -1,11 +1,11 @@
-//
-// pmdlist.h
-//
-// PopupMenu Library - Linked Lists
-//
-// Copyright (C)2000 Henrik Isaksson <henrik@boing.nu>
-// All Rights Reserved.
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmdlist.h - Linked Lists
+ */
 
 
 #ifndef PM_DLIST_H

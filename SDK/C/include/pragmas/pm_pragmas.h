@@ -1,3 +1,12 @@
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pragmas/pm_pragmas.h - Legacy SAS/C pragmas
+ */
+
 #pragma libcall PopupMenuBase PM_MakeMenuA 1e 901
 #pragma tagcall PopupMenuBase PM_MakeMenu 1e 901
 #pragma libcall PopupMenuBase PM_MakeItemA 24 901

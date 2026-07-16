@@ -1,23 +1,18 @@
-//
-// $VER: BigMenu.c 1.6 (05.09.98)
-//
-// Popup Menu library test program
-//
-// ©1996-1997 Henrik Isaksson
-// All Rights Reserved.
-//
-// Run and click the mouse in the window!
-// This little hack is intended to test the submenus.
-//
-// WARNING! When the menu runs out of stack, it will end in a crash!
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * $VER: BigMenu.c 1.6 (05.09.98) - Popup Menu library test program
+ */
 
 #include <intuition/intuition.h>
 
 #include <proto/intuition.h>
 #include <proto/exec.h>
 
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 
 #include <string.h>
 #include <stdio.h>

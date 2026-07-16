@@ -1,6 +1,11 @@
-//
-// pmmem.h
-//
+/*
+ * SPDX-License-Identifier: BSD-2-Clause
+ *
+ * Copyright (C) 1996-2002 Henrik Isaksson
+ * Copyright (C) 2026 amigazen project
+ *
+ * pmmem.c - pooled memory helpers
+ */
 
 #include "pmpriv.h"
 #include "pmmem.h"
