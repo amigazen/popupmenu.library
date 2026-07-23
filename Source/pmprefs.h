@@ -42,7 +42,8 @@
 /// File name/ID
 #define PMP_ID		(0x504d4e55)
 #define PMP_VERSION	1
-#define PMP_PATH	"ENV:sys/PopupMenu.prefs"
+#define PMP_PATH	"ENV:Sys/PopupMenu.prefs"
+#define PMP_S_PATH	"ENVARC:Sys/PopupMenu.prefs"
 ///
 
 extern struct PopupMenuPrefs	*PM_Prefs;

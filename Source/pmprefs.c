@@ -16,6 +16,11 @@
 
 void PM_LoadPrefsFile(STRPTR filename, ULONG flags, struct PopupMenuPrefs *prefs, struct PopupMenuPrefs *defprefs);
 
+/*
+ * Default chrome: Intuition NewLook menus (prefs editor labels).
+ * Menu Border 5 = Intuition border, Separators 0 = New Look,
+ * Selected item 0 = No border. Images default to System (SysIClass).
+ */
 struct PopupMenuPrefs DefaultPrefs = {
 	1,			/* pmp_Flags		*/
 	0,			/* pmp_SubMenuDelay	*/
@@ -23,9 +28,9 @@ struct PopupMenuPrefs DefaultPrefs = {
 	PMP_PD_SCREENBAR,	/* pmp_PulldownPos	*/
 	FALSE,			/* pmp_Sticky		*/
 	FALSE,			/* pmp_SameHeight	*/
-	0,			/* pmp_MenuBorder	*/
-	0,			/* pmp_SelItemBorder	*/
-	0,			/* pmp_SeparatorBar	*/
+	PMP_MENUBORDER_OLDSTYLE, /* pmp_MenuBorder (Intuition border) */
+	PMP_SELITEM_NO_BORDER,	/* pmp_SelItemBorder	*/
+	0,			/* pmp_SeparatorBar (New Look) */
 	0,			/* pmp_MenuTitles	*/
 	0,			/* pmp_MenuItems	*/
 	2,			/* pmp_XOffset		*/
@@ -43,7 +48,7 @@ struct PopupMenuPrefs DefaultPrefs = {
 	0,			/* pmp_TransparencyBlur	*/
 	0,			/* pmp_AnimationSpeed	*/
 
-	{0},			/* pmp_Reserved		*/
+	{ PMP_IMAGES_SYSTEM },	/* pmp_Reserved[0]=images, rest 0 */
 };
 
 struct PopupMenuPrefs LoadedPrefs;

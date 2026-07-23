@@ -22,7 +22,7 @@ void PM_DrawBg(struct PM_Window *pw, int x, int y, int xb, int yb)
 			xb-xa, yb-ya, RECTFMT_RGB);
 
 	} else {
-		SetAPen(pw->RPort, BGPEN(pw->p));
+		SetAPen(pw->RPort, MENUBG(pw->p));
 		SetDrMd(pw->RPort, JAM1);
 		RectFill(pw->RPort, xa, ya, xb, yb);
 	}
@@ -93,7 +93,13 @@ void PM_DI_SetTextPen(struct PM_Window *a, struct PopupMenu *pm)
         SetAPen(a->RPort, TEXT(a->p));
         if(pm->Flags&NPM_FILLTEXT) SetAPen(a->RPort, FILL(a->p));
         if(pm->Flags&NPM_SHADOWTEXT) SetAPen(a->RPort, SHADOW(a->p));
-        if(pm->Flags&NPM_SHINETEXT) SetAPen(a->RPort, SHINE(a->p));
+	/* White Intuition menus: never draw text in SHINEPEN (same as bg). */
+        if(pm->Flags&NPM_SHINETEXT) {
+		if(PM_INTUI_BORDER())
+			SetAPen(a->RPort, TEXT(a->p));
+		else
+			SetAPen(a->RPort, SHINE(a->p));
+	}
         if(pm->Flags&NPM_HILITETEXT) SetAPen(a->RPort, HILITE(a->p));
         if(pm->Flags&NPM_CUSTOMPEN) SetAPen(a->RPort, pm->TextPen);
 }
@@ -272,7 +278,8 @@ int PM_NewDrawItem(struct PM_Window *a, struct PopupMenu *pm, BOOL Selected, BOO
         }
 
     if((pm->Flags&NPM_DISABLED || Disabled) && !PM_Prefs->pmp_SeparatorBar) {
-                SetAPen(a->RPort, BGSHINE(a->p));
+		/* Ghost offset: SHINE on grey bg; use SHADOW when bg is already shine. */
+                SetAPen(a->RPort, PM_INTUI_BORDER() ? SHADOW(a->p) : BGSHINE(a->p));
                 PM_Move(a, pm->Left+xoff+1, YPosText(a, pm)+1);
                 if(pmtitle) Text(a->RPort, pmtitle, strlen(pmtitle));
         } else if(pm->Flags&NPM_SHADOWED) {
@@ -303,7 +310,8 @@ int PM_NewDrawItem(struct PM_Window *a, struct PopupMenu *pm, BOOL Selected, BOO
         }
         } else if(pm->Flags&NPM_EMBOSSED) {
         if(pmtitle) {
-                    SetAPen(a->RPort, SHINE(a->p));
+		    /* Emboss highlight must not be SHINEPEN on Intuition white menus. */
+                    SetAPen(a->RPort, PM_INTUI_BORDER() ? TEXT(a->p) : SHINE(a->p));
                     PM_Move(a, pm->Left+xoff-1, YPosText(a, pm)-1);
                     Text(a->RPort, pmtitle, strlen(pmtitle));
                     PM_Move(a, pm->Left+xoff-1, YPosText(a, pm));
@@ -478,7 +486,7 @@ void PM_WideSeparator(struct PM_Window *a, struct PopupMenu *pm)
             SetAPen(a->RPort, SHADOW(a->p));
             PM_Draw(a, a->Width-a->p->BorderWidth, BarTop(a, pm)+1);
 
-            SetAPen(a->RPort, BGPEN(a->p));
+            SetAPen(a->RPort, MENUBG(a->p));
             PM_Move(a, a->p->BorderWidth-1, BarTop(a, pm)-1);
             PM_Draw(a, a->p->BorderWidth-1, BarTop(a, pm));
             PM_Move(a, a->Width-a->p->BorderWidth, BarTop(a, pm)-1);

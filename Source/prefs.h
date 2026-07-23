@@ -203,8 +203,8 @@ struct PrefsImage {
 
 /// File name/ID
 #define PMP_ID      (0x504d4e55)
-#define PMP_PATH    "ENV:PopupMenu.cfg"
-#define PMP_S_PATH  "ENVARC:PopupMenu.cfg"
+#define PMP_PATH    "ENV:sys/PopupMenu.prefs"
+#define PMP_S_PATH  "ENVARC:sys/PopupMenu.prefs"
 ///
 
 #endif

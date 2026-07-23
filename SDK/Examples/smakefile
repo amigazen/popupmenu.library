@@ -43,7 +43,8 @@ EXAMPLES = \
 	LocaleMenu \
 	EndlessMenu \
 	MenuIcons \
-	opus4
+	opus4 \
+	PopupMenuPrefs
 
 ###############################################################################
 
@@ -87,6 +88,9 @@ MenuIcons: MenuIcons.c
 
 opus4: opus4.c
 	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ opus4.c LIB $(LIBS)
+
+PopupMenuPrefs: PopupMenuPrefs.c
+	Sc $(CFLAGS) $(LFLAGS) LINK TO $@ PopupMenuPrefs.c LIB $(LIBS)
 
 ###############################################################################
 

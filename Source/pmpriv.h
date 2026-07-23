@@ -167,6 +167,10 @@
 #define BGSHINE(xyz)            xyz->DrawInfo->dri_Pens[MENUSHINEPEN]
 #define HALF(xyz)               xyz->DrawInfo->dri_Pens[MENUBACKGROUNDPEN]
 
+/* Intuition-border menus use SHINEPEN (white) like classic BARBLOCK menus. */
+#define PM_INTUI_BORDER()	(PM_Prefs && PM_Prefs->pmp_MenuBorder == INTUI_FRAME)
+#define MENUBG(xyz)		(PM_INTUI_BORDER() ? SHINE(xyz) : BGPEN(xyz))
+
 #define PATCH(p, n)		if(PM_Prefs->pmp_MenuTitles & p) pm->Flags|=n; else pm->Flags&=~n;
 #define TPATCH(p, n)		if(PM_Prefs->pmp_MenuItems & p) pm->Flags|=n;
 
@@ -382,6 +386,7 @@ struct PM_Root {
 	struct PM_InputHandler *pmh;
 
 	struct Image *MenuImages[PMIMG_LAST];
+	UBYTE		FreeMenuImages;	/* TRUE if MenuImages were NewObject()'d */
 };
 
 extern struct PM_Root *p;
