@@ -8,7 +8,7 @@ Versions are listed **newest first**.
 
 ---
 
-## [10.11] — 2026-07-16 (amigazen ToolKit)
+## [10.11] — 2026-07-23 (amigazen ToolKit)
 
 **Maintainer:** amigazen project
 
@@ -20,17 +20,25 @@ Versions are listed **newest first**.
 - `SDK/Include_h/` generated headers + `proto/pm.h` compatibility wrappers
 - `SDK/Examples/smakefile` to rebuild all C demos with SAS/C
 - BSD 2-Clause `LICENSE.md` (per Henrik Isaksson AROS grant)
+- GadTools prefs editor `SDK/Examples/PopupMenuPrefs` — load/save modern IFF `PREF`/`PMNU` (`<prefs/popupmenu.h>`)
+- Built-in image set selection (`PMP_IMAGES_SYSTEM` / `MM2_8` / `MM2_11` / `NONE` via `pmp_Reserved[0]`)
 
 ### Changed
 
 - `Source/smakefile` / `SCOPTIONS` for ToolKit include paths and classic NDK build
 - Gated NewGUI / OS4-only headers (`screens.h`, `gui.h`, `GetGUIAttrs`) off SAS/C
 - CGFX shade hook uses registerised `h_Entry` (A0/A2/A1) under `params=register`
+- Prefs path is now `ENV:sys/PopupMenu.prefs` / `ENVARC:sys/PopupMenu.prefs` (IFF format)
+- Intuition-border menus use `SHINEPEN` background; text/emboss/ghosting avoids `SHINEPEN` in that mode
+- Default chrome: Intuition border, New Look separators, no selected-item border, System images
+- Static menu glyphs (submenu arrow / MM2 set) drawn with `BltTemplate` + JAM1 (no pen-0 box)
+- Removed obsolete MUI prefs binary from `SDK/Prefs/` (replaced by GadTools editor)
 
 ### Notes
 
 - **ABI unchanged** relative to 10.10: same LVO order and biases as the legacy FD
 - Public `PM_FilterIMsgA` pragma offset corrected to **−102** (`0x66`); obsolete stub remains at **−90**
+- Prefs editor button semantics: Test → ENV only (stay open); Use → ENV then exit; Save → ENVARC then ENV then exit; Cancel → exit
 
 ---
 
